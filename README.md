@@ -1,10 +1,9 @@
 # QRDroid
 
-[![Kotlin](https://img.shields.io/badge/Kotlin-2.0+-7F52FF.svg?style=flat&logo=kotlin&logoColor=white)](https://kotlinlang.org)
-[![Android SDK](https://img.shields.io/badge/Platform-Android%2024%2B-3DDC84.svg?style=flat&logo=android&logoColor=white)](https://android.com)
-[![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-Material%203-4285F4.svg?style=flat&logo=jetpackcompose&logoColor=white)](https://developer.android.com/jetpack/compose)
-[![ML Kit](https://img.shields.io/badge/Google%20ML%20Kit-Barcode%20Scanning-EA4335.svg?style=flat&logo=google&logoColor=white)](https://developers.google.com/ml-kit/vision/barcode-scanning)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF.svg?logo=Kotlin&logoColor=white)
+![Android](https://img.shields.io/badge/Android-3DDC84.svg?logo=Android&logoColor=white)
+![Compose](https://img.shields.io/badge/Compose-4285F4.svg?logo=JetpackCompose&logoColor=white)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 **QRDroid** é um aplicativo Android moderno, rápido e intuitivo para leitura e geração de QR Codes e códigos de barras. Desenvolvido 100% em **Kotlin** com **Jetpack Compose** e **Material Design 3**, oferece suporte nativo especializado para o ecossistema brasileiro (PIX e Boletos), além de detecção ultrarrápida com Google ML Kit e CameraX.
 
