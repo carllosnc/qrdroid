@@ -1,4 +1,4 @@
-# QRDroid 📱⚡
+# QRDroid
 
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.0+-7F52FF.svg?style=flat&logo=kotlin&logoColor=white)](https://kotlinlang.org)
 [![Android SDK](https://img.shields.io/badge/Platform-Android%2024%2B-3DDC84.svg?style=flat&logo=android&logoColor=white)](https://android.com)
@@ -10,34 +10,34 @@
 
 ---
 
-## ✨ Funcionalidades Principais
+## Funcionalidades Principais
 
-### 🔍 Leitor Inteligente (Scanner)
+### Leitor Inteligente (Scanner)
 - **Detecção Ultrarrápida:** Processamento em tempo real com **Google ML Kit Barcode Scanning**.
 - **Controles de Câmera:** Suporte a zoom suave (0.5x, 1x, 2x, 5x), alternância de lanterna (flash) e troca entre câmera traseira/frontal.
 - **Overlay Dinâmico:** Miras com animação de laser estilo scanner e cantos arredondados modernos.
 - **Feedback Tátil:** Vibração e resposta tátil imediata ao reconhecer um código.
 
-### 🇧🇷 Parsers Especializados
+### Parsers Especializados (PIX, Boleto e Outros)
 - **PIX (Padrão BACEN / EMV):** Identificação de nome do recebedor, cidade, chave PIX, identificador da transação e valor formatado (R$). Ação rápida para copiar código "Copia e Cola".
 - **Boleto Bancário & Concessionárias:** Suporte a boletos de cobrança e contas de serviços (água, luz, gás, tributos), cálculo de data de vencimento, valor e formatação da Linha Digitável.
 - **Wi-Fi:** Leitura instantânea de configurações de rede (SSID, senha, tipo de criptografia WPA/WEP/Open) e conexão direta.
 - **Links & Navegação:** Pré-visualização de URLs com abertura segura no navegador padrão.
 - **Contatos, E-mails e Telefones:** Ações contextuais de discagem, envio de mensagem e cópia.
 
-### 🛠️ Gerador de QR Code
+### Gerador de QR Code
 - Geração instantânea de QR Codes em alta resolução utilizando **ZXing**.
 - Suporte a múltiplos tipos de conteúdo: Texto puro, URLs, Redes Wi-Fi, Chaves PIX, etc.
 - Compartilhamento e exportação de imagem gerada via `FileProvider`.
 
-### 📚 Histórico e Favoritos
+### Histórico e Favoritos
 - Armazenamento local seguro e offline via **SQLite**.
 - Busca textual dinâmica e filtros por categoria (Todos, PIX, Boleto, URL, Wi-Fi).
 - Marcação de itens favoritos, cópia de conteúdo e exclusão individual ou em lote.
 
 ---
 
-## 🛠️ Tecnologias e Arquitetura
+## Tecnologias e Arquitetura
 
 O projeto adota práticas recomendadas de engenharia de software Android moderna:
 
@@ -53,7 +53,7 @@ O projeto adota práticas recomendadas de engenharia de software Android moderna
 
 ---
 
-## 📂 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```text
 qrdroid/
@@ -83,7 +83,7 @@ qrdroid/
 
 ---
 
-## 🚀 Como Executar o Projeto
+## Como Executar o Projeto
 
 ### Pré-requisitos
 - **Android Studio Ladybug** (ou versão superior)
@@ -114,6 +114,6 @@ qrdroid/
 
 ---
 
-## 📄 Licença
+## Licença
 
 Este projeto está sob a licença [MIT](LICENSE).
