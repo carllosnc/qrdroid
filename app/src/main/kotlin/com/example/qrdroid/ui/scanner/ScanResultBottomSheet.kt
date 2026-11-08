@@ -195,29 +195,13 @@ fun ScanResultBottomSheet(
                 context = context
             )
 
-            // Secondary Action Row (Copy, Share)
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(10.dp)
-            ) {
-                FilledTonalButton(
-                    onClick = {
-                        copyToClipboard(context, scanItem.rawValue, "Conteúdo copiado!")
-                    },
-                    shape = CircleShape,
-                    colors = ButtonDefaults.filledTonalButtonColors(
-                        containerColor = MaterialTheme.colorScheme.secondaryContainer,
-                        contentColor = MaterialTheme.colorScheme.onSecondaryContainer
-                    ),
-                    modifier = Modifier
-                        .weight(1f)
-                        .height(48.dp)
-                ) {
-                    Icon(Icons.Default.ContentCopy, contentDescription = null, modifier = Modifier.size(18.dp))
-                    Spacer(modifier = Modifier.width(8.dp))
-                    Text("Copiar", style = MaterialTheme.typography.labelLarge)
-                }
+            // Secondary Action Row (Se a ação primária já for cópia, exibe apenas Compartilhar para evitar duplicação)
+            val isPrimaryActionCopy = when (scanItem.valueType) {
+                ScanType.URL, ScanType.PRODUCT -> false
+                else -> true
+            }
 
+            if (isPrimaryActionCopy) {
                 FilledTonalButton(
                     onClick = {
                         shareContent(context, scanItem.rawValue)
@@ -228,12 +212,53 @@ fun ScanResultBottomSheet(
                         contentColor = MaterialTheme.colorScheme.onSecondaryContainer
                     ),
                     modifier = Modifier
-                        .weight(1f)
+                        .fillMaxWidth()
                         .height(48.dp)
                 ) {
                     Icon(Icons.Default.Share, contentDescription = null, modifier = Modifier.size(18.dp))
                     Spacer(modifier = Modifier.width(8.dp))
                     Text("Compartilhar", style = MaterialTheme.typography.labelLarge)
+                }
+            } else {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(10.dp)
+                ) {
+                    FilledTonalButton(
+                        onClick = {
+                            copyToClipboard(context, scanItem.rawValue, "Conteúdo copiado!")
+                        },
+                        shape = CircleShape,
+                        colors = ButtonDefaults.filledTonalButtonColors(
+                            containerColor = MaterialTheme.colorScheme.secondaryContainer,
+                            contentColor = MaterialTheme.colorScheme.onSecondaryContainer
+                        ),
+                        modifier = Modifier
+                            .weight(1f)
+                            .height(48.dp)
+                    ) {
+                        Icon(Icons.Default.ContentCopy, contentDescription = null, modifier = Modifier.size(18.dp))
+                        Spacer(modifier = Modifier.width(8.dp))
+                        Text("Copiar", style = MaterialTheme.typography.labelLarge)
+                    }
+
+                    FilledTonalButton(
+                        onClick = {
+                            shareContent(context, scanItem.rawValue)
+                        },
+                        shape = CircleShape,
+                        colors = ButtonDefaults.filledTonalButtonColors(
+                            containerColor = MaterialTheme.colorScheme.secondaryContainer,
+                            contentColor = MaterialTheme.colorScheme.onSecondaryContainer
+                        ),
+                        modifier = Modifier
+                            .weight(1f)
+                            .height(48.dp)
+                    ) {
+                        Icon(Icons.Default.Share, contentDescription = null, modifier = Modifier.size(18.dp))
+                        Spacer(modifier = Modifier.width(8.dp))
+                        Text("Compartilhar", style = MaterialTheme.typography.labelLarge)
+                    }
                 }
             }
 
