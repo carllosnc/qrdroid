@@ -102,6 +102,11 @@ class ScannerViewModel(
                             errorMessage = "Falha ao analisar a imagem: ${it.message}"
                         )
                     }
+                    .addOnCompleteListener {
+                        try {
+                            scanner.close()
+                        } catch (_: Exception) {}
+                    }
             } catch (e: Exception) {
                 _uiState.value = _uiState.value.copy(
                     errorMessage = "Erro ao carregar imagem: ${e.message}"
