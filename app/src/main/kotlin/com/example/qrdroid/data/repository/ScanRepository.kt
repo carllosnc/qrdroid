@@ -4,26 +4,31 @@ import android.content.Context
 import com.example.qrdroid.data.local.ScanDatabaseHelper
 import com.example.qrdroid.data.model.ScanItem
 import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class ScanRepository(
     context: Context,
     private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
 ) {
-    private val dbHelper = ScanDatabaseHelper(context)
+    private val dbHelper = ScanDatabaseHelper(context.applicationContext)
+    private val repositoryScope = CoroutineScope(SupervisorJob() + ioDispatcher)
     private val _scansFlow = MutableStateFlow<List<ScanItem>>(emptyList())
     val scansFlow: Flow<List<ScanItem>> = _scansFlow.asStateFlow()
 
     init {
-        // Initial load
-        refresh()
+        repositoryScope.launch {
+            refresh()
+        }
     }
 
-    private fun refresh() {
+    private suspend fun refresh() = withContext(ioDispatcher) {
         val list = dbHelper.getAllScans()
         _scansFlow.value = list
     }
