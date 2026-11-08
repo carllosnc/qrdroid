@@ -127,6 +127,7 @@ fun CameraPreviewView(
         onDispose {
             Log.d(TAG, "CameraPreviewView onDispose: unbinding camera and shutting down executor")
             try {
+                analyzer.close()
                 cameraProviderRef?.unbindAll()
                 camera = null
             } catch (e: Exception) {
