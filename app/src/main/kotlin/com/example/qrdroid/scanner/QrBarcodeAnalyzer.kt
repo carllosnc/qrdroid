@@ -24,6 +24,12 @@ class QrBarcodeAnalyzer(
         isScanningEnabled = enabled
     }
 
+    fun close() {
+        try {
+            scanner.close()
+        } catch (_: Exception) {}
+    }
+
     @ExperimentalGetImage
     override fun analyze(imageProxy: ImageProxy) {
         val mediaImage = imageProxy.image
