@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="app/src/main/res/drawable/ic_splash_logo.png" width="120" alt="QRDroid Logo" />
+  <img src="assets/logo.png" width="120" alt="QRDroid Logo" />
   <h1>QRDroid</h1>
 
   <p>
