@@ -12,8 +12,6 @@
 
 **QRDroid** is a modern, fast, and intuitive Android application for scanning and generating QR codes and barcodes. Built 100% in **Kotlin** with **Jetpack Compose** and **Material Design 3 (Material You)**, it provides first-class native support for the Brazilian payment ecosystem (PIX and Boletos), dynamic color customization with an HSV color picker, and ultra-fast on-device computer vision powered by Google ML Kit and CameraX.
 
----
-
 ## Key Features
 
 ### Smart Scanner
@@ -41,8 +39,6 @@
 - **Dynamic Search & Filtering:** Real-time search query matching and category filter chips (All, PIX, Boleto, URL, Wi-Fi).
 - **Favorites & Management:** Star frequently used codes, copy contents on demand, or remove items individually and in bulk.
 
----
-
 ## Architecture & Tech Stack
 
 The project adheres to modern Android engineering best practices:
@@ -56,8 +52,6 @@ The project adheres to modern Android engineering best practices:
 - **Navigation:** [Jetpack Navigation 3](https://developer.android.com/guide/navigation)
 - **Architecture Pattern:** Clean MVVM (Model-View-ViewModel) + Kotlin Coroutines & StateFlow
 - **Local Database:** Native SQLite with Repository pattern
-
----
 
 ## Project Structure
 
@@ -87,8 +81,6 @@ qrdroid/
 └── README.md
 ```
 
----
-
 ## Getting Started
 
 ### Prerequisites
@@ -117,8 +109,6 @@ qrdroid/
    ```bash
    ./gradlew test
    ```
-
----
 
 ## License
 
