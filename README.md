@@ -1,9 +1,14 @@
-# QRDroid
+<div align="center">
+  <img src="app/src/main/res/drawable/ic_splash_logo.png" width="120" alt="QRDroid Logo" />
+  <h1>QRDroid</h1>
 
-![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF.svg?logo=Kotlin&logoColor=white)
-![Android](https://img.shields.io/badge/Android-3DDC84.svg?logo=Android&logoColor=white)
-![Compose](https://img.shields.io/badge/Compose-4285F4.svg?logo=JetpackCompose&logoColor=white)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+  <p>
+    <img src="https://img.shields.io/badge/Kotlin-7F52FF.svg?logo=Kotlin&logoColor=white" alt="Kotlin" />
+    <img src="https://img.shields.io/badge/Android-3DDC84.svg?logo=Android&logoColor=white" alt="Android" />
+    <img src="https://img.shields.io/badge/Compose-4285F4.svg?logo=JetpackCompose&logoColor=white" alt="Compose" />
+    <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License" /></a>
+  </p>
+</div>
 
 **QRDroid** is a modern, fast, and intuitive Android application for scanning and generating QR codes and barcodes. Built 100% in **Kotlin** with **Jetpack Compose** and **Material Design 3 (Material You)**, it provides first-class native support for the Brazilian payment ecosystem (PIX and Boletos), dynamic color customization with an HSV color picker, and ultra-fast on-device computer vision powered by Google ML Kit and CameraX.
 
