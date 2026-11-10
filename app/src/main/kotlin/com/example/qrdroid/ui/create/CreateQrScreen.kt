@@ -156,15 +156,13 @@ fun CreateQrScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(top = padding.calculateTopPadding())
-                .verticalScroll(scrollState)
-                .padding(horizontal = 20.dp, vertical = 8.dp),
-            verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             // Types selector (Chips)
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .horizontalScroll(rememberScrollState()),
+                    .horizontalScroll(rememberScrollState())
+                    .padding(horizontal = 16.dp, vertical = 8.dp),
                 horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 QrCreateType.entries.forEach { type ->
@@ -210,11 +208,18 @@ fun CreateQrScreen(
             }
 
             HorizontalDivider(
-                color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.4f),
-                thickness = 0.8.dp
+                color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f),
+                thickness = 1.dp
             )
 
-            // Input Fields based on Type
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .verticalScroll(scrollState)
+                    .padding(horizontal = 20.dp, vertical = 16.dp),
+                verticalArrangement = Arrangement.spacedBy(16.dp)
+            ) {
+                // Input Fields based on Type
             when (uiState.selectedType) {
                 QrCreateType.TEXT -> {
                     OutlinedTextField(
@@ -440,6 +445,7 @@ fun CreateQrScreen(
             Spacer(modifier = Modifier.height(24.dp))
         }
     }
+}
 }
 
 /**
